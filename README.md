@@ -1,5 +1,11 @@
-Ionic App Base
-=====================
+Code Craft Pro - Soundboard
+=======
+
+This Ionic app was created using as part of the online course, Ionic: From Web to Mobile by Code Craft Pro via the Udemy platform.
+
+
+# Ionic App Base
+
 
 A starting project for Ionic that optionally supports using custom SCSS.
 
