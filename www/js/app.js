@@ -23,7 +23,7 @@ app.run(function($ionicPlatform) {
   });
 });
 
-app.controller('SoundboardCtrl', function($scope) {
+app.controller('SoundboardCtrl', function($scope, $window) {
 
   $scope.media = null;
 
@@ -63,7 +63,7 @@ app.controller('SoundboardCtrl', function($scope) {
       },
       {
         'title': 'Dog',
-        'image': 'img/animals/dog-icon.png',
+        'image': 'img/animals/puppy-icon.png',
         'desc': 'Bark',
         'file': '/sounds/dog.mp3',
       },
@@ -76,8 +76,41 @@ app.controller('SoundboardCtrl', function($scope) {
     ]
   };
 
+  $scope.deleteSound = function ($index) {
+    $scope.model.sounds.splice($index, 1);
+  };
+
+  $scope.moveSound = function (sound, fromIndex, toIndex) {
+    $scope.model.sounds.splice(fromIndex, 1);
+    $scope.model.sounds.splice(toIndex, 0, sound);
+  }
+
   $scope.play = function(sound) {
-    //  
+
+    if ($scope.media) {
+      $scope.media.pause();
+    }
+
+    if ($window.cordova) {
+      console.log("Play called on device");
+      ionic.Platform.ready(function () {
+
+        var src = sound.file;
+        if (ionic.Platform.is('android')) {
+          src = '/android_asset/www/' + src;
+        }
+
+        $scope.media = new $window.Media(sound.file);
+        $scope.media.play();
+      });
+    } else {
+      $scope.media = new Audio();
+      $scope.media.src = sound.file;
+      $scope.media.load();
+      $scope.media.play();
+    }
+
+
   };
 
 });
