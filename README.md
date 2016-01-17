@@ -1,7 +1,10 @@
 Code Craft Pro - Soundboard
 =======
+Soundboard is an Ionic app created during the online course, Ionic: From Web to Mobile by Code Craft Pro.
 
-This Ionic app was created using as part of the online course, Ionic: From Web to Mobile by Code Craft Pro via the Udemy platform.
+[Code Craft Pro - Ionic: From Web to Mobile](http://school.codecraftpro.com/courses/ionic-from-web-to-mobile?utm_source=codecraftpro.com&utm_medium=frontpage&utm_campaign=website)
+
+[Udemy - Ionic: From Web to Mobile](https://www.udemy.com/ionic-from-web-to-mobile/learn/#/)
 
 
 # Ionic App Base
